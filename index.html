@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh" data-ptr="1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>zzpLock</title>
+    <link rel="stylesheet" href="./style/css/zzpLock.css">
+    <!--<script>-->
+        <!--let scale = window.devicePixelRatio >= 2 ? 0.5 : 1;-->
+        <!--let radio = window.devicePixelRatio >= 2 ? 2 : 1;-->
+        <!--let metaEle = document.querySelector("meta[name=viewport]");-->
+        <!--if(!metaEle) {-->
+            <!--metaEle = document.createElement("meta");-->
+            <!--metaEle.setAttribute("name","viewport");-->
+            <!--document.head.appendChild(metaEle);-->
+        <!--}-->
+        <!--document.querySelector("html").setAttribute("data-ptr", radio);-->
+        <!--metaEle.setAttribute("content", "width=device-width, initial-scale=" + scale + ", user-scalable=no");-->
+    <!--</script>-->
+</head>
+<body>
+</body>
+<script type="text/javascript" src="./lib/zzpLock.js"></script>
+<script type="text/javascript" src="./lib/md5.min.js"></script>
+<script type="text/javascript">
+    var a = new ZZPLock({
+        'nodeType': 3,
+        'pwdResultMsg': function(state) {
+            switch(state) {
+                case 'success' :
+                    document.querySelector("#title").textContent = "密码正确";          //success
+                    break;
+                case 'error' :
+                    document.querySelector("#title").textContent = "密码错误";          //error
+                    break;
+                case 'storeSuccess':
+                    document.querySelector("#title").textContent = "密码保存成功";
+                    break;
+                case 'storeError':
+                    document.querySelector("#title").textContent = "两次密码输入不一致";  // storeError
+                    break;
+                case 'shortPwd':
+                    document.querySelector("#title").textContent = "密码太短";           // shortPwd
+                    break;
+                case 'repeatPwd':
+                    document.querySelector("#title").textContent = "请再次输入";          // repeatPwd
+                    break;
+            }
+        },
+        'showMsg': function(state) {
+            switch(state) {
+                case 2:
+                    document.querySelector("#hint").style.display = "none";
+                    document.querySelector("#myImage").style.display = "block";
+                    document.querySelector("#title").textContent = "请解锁";
+                    document.querySelector("#changePsw").style.backgroundColor = "#254154";
+                    break;
+                case 1:
+                    document.querySelector("#myImage").style.display = "none";
+                    document.querySelector("#hint").style.display = "block";
+                    document.querySelector("#changePsw").style.backgroundColor = "#254154";
+                    break;
+                default:
+                    document.querySelector("#myImage").style.display = "none";
+                    document.querySelector("#hint").style.display = "block";
+                    document.querySelector("#changePsw").style.backgroundColor = "#A9A9A9";
+            }
+        },
+        'pswEncript': md5
+    });
+</script>
+</html>

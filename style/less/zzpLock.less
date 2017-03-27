@@ -1,0 +1,78 @@
+.pos {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  display: block;
+  border: 1px solid #ffffff;
+}
+
+#changePsw {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 5px;
+  background: #254154;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+#hint {
+  .pos;
+  border-radius: 5px;
+}
+
+#title {
+  color: #ffffff;
+  margin: 170px auto auto 0;
+  font-size: 20px;
+}
+
+#myImage {
+  .pos;
+  width: 100px;
+  height: 100px;
+  background-image: url("../../images/me.jpg");
+  background-size: 100%;
+  border-radius: 50px;
+}
+
+#canvasWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+[data-ptr="2"] {
+  #changePsw {
+    width: 200px;
+    height: 70px;
+    font-size: 34px;
+    line-height: 70px;
+  }
+
+  #title {
+    margin: 340px auto auto 0;
+    font-size: 40px;
+  }
+
+  #hint {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+  }
+
+  #myImage {
+    border: 2px solid #ffffff;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+  }
+}
