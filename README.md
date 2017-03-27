@@ -1,3 +1,3 @@
 zzplock
 ===
-[](https://travis-ci.org/hbxtben/zzplock.svg?branch=master)
+![](https://travis-ci.org/hbxtben/zzplock.svg?branch=master)
