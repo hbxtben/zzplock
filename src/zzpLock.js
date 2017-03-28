@@ -3,12 +3,12 @@
     "use strict";
     let instance = null;    //单例模式储存的唯一对象
     const ratio = win.devicePixelRatio >= 2 ? 2 : 1;
-    const PWD_SUCCESS = "success";
-    const PWD_ERROR = "error";
-    const SEC_SUCCESS = "storeSuccess";
-    const SEC_ERROR = "storeError";
-    const FIR_SHORT = "shortPwd";
-    const FIR_REPEAT = "repeatPwd";
+    const PWD_SUCCESS = "success";          //验证正确
+    const PWD_ERROR = "error";              //验证错误
+    const SEC_SUCCESS = "storeSuccess";     //设置密码二次确认正确
+    const SEC_ERROR = "storeError";         //设置密码二次确认错误
+    const FIR_SHORT = "shortPwd";           //设置密码过短
+    const FIR_REPEAT = "repeatPwd";         //重设密码提示
 
     class ZZPLock {
         /**
