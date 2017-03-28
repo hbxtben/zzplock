@@ -7,6 +7,7 @@
 [DEMO](https://hbxtben.github.io/zzplock/test/)(需打开移动端调试工具查看效果) 
 
 ![gif效果展示](https://github.com/hbxtben/zzplock/blob/master/images/zzplock.gif)
+![ercode](https://github.com/hbxtben/zzplock/blob/master/images/zzplock.png)
 
 ## 简要说明
 - 支持密码设置时两次校对
