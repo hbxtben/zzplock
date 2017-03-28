@@ -461,6 +461,16 @@
                 this.changePsw();
             }, false);
         }
+
+        /**
+         * 销毁组件
+         */
+        destory() {
+            window.localStorage.clear();
+            document.querySelector(this.hintName).remove();
+            document.querySelector(this.canvasName).remove();
+            instance = null;
+        }
     };
 
     //工具集对象

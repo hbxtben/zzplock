@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../lib/zzpLock.js"></script>
 <script type="text/javascript" src="../lib/md5.min.js"></script>
 <script type="text/javascript">
-    var a = new ZZPLock({
+    var lock = new ZZPLock({
         'pwdResultMsg': function(state) {
             let title = document.querySelector("#title");
             switch(state) {
@@ -65,5 +65,8 @@
         },
         'pswEncript': md5,
     });
+
+    //销毁组件
+    //lock.destory();
 </script>
 </html>
