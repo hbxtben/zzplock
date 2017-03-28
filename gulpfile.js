@@ -35,7 +35,7 @@ gulp.task("server", ["es6", "less"], function() {
             baseDir: "./"
         }
     })
-    gulp.watch("./*.html", reload);
+    gulp.watch("./test/*.html", reload);
     gulp.watch("./style/less/*.less", ['less']);
     gulp.watch("./src/*.js", ['es6']);
 })

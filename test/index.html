@@ -14,44 +14,54 @@
     var a = new ZZPLock({
         'nodeType': 3,
         'pwdResultMsg': function(state) {
+            let title = document.querySelector("#title");
             switch(state) {
                 case 'success' :
-                    document.querySelector("#title").textContent = "密码正确";          //success
+                    title.textContent = "密码正确";          //success
                     break;
                 case 'error' :
-                    document.querySelector("#title").textContent = "密码错误";          //error
+                    title.textContent = "密码错误";          //error
+                    title.classList.add('shake');
                     break;
                 case 'storeSuccess':
-                    document.querySelector("#title").textContent = "密码保存成功";
+                    title.textContent = "密码保存成功";
                     break;
                 case 'storeError':
-                    document.querySelector("#title").textContent = "两次密码输入不一致";  // storeError
+                    title.textContent = "两次密码输入不一致";  // storeError
+                    title.classList.add('shake');
                     break;
                 case 'shortPwd':
-                    document.querySelector("#title").textContent = "密码太短";           // shortPwd
+                    title.textContent = "密码太短";           // shortPwd
+                    title.classList.add('shake');
                     break;
                 case 'repeatPwd':
-                    document.querySelector("#title").textContent = "请再次输入";          // repeatPwd
+                    title.textContent = "请再次输入";          // repeatPwd
                     break;
             }
         },
         'showMsg': function(state) {
+            let hint =  document.querySelector("#hint"),
+                myImage = document.querySelector("#myImage"),
+                title = document.querySelector("#title"),
+                changePsw = document.querySelector("#changePsw");
+            title.classList.remove('shake');
+
             switch(state) {
                 case 2:
-                    document.querySelector("#hint").style.display = "none";
-                    document.querySelector("#myImage").style.display = "block";
-                    document.querySelector("#title").textContent = "请解锁";
-                    document.querySelector("#changePsw").style.backgroundColor = "#254154";
+                    hint.style.display = "none";
+                    myImage.style.display = "block";
+                    title.textContent = "请解锁";
+                    changePsw.style.backgroundColor = "#254154";
                     break;
                 case 1:
-                    document.querySelector("#myImage").style.display = "none";
-                    document.querySelector("#hint").style.display = "block";
-                    document.querySelector("#changePsw").style.backgroundColor = "#254154";
+                    myImage.style.display = "none";
+                    hint.style.display = "block";
+                    changePsw.style.backgroundColor = "#254154";
                     break;
                 default:
-                    document.querySelector("#myImage").style.display = "none";
-                    document.querySelector("#hint").style.display = "block";
-                    document.querySelector("#changePsw").style.backgroundColor = "#A9A9A9";
+                    myImage.style.display = "none";
+                    hint.style.display = "block";
+                    changePsw.style.backgroundColor = "#A9A9A9";
             }
         },
         'pswEncript': md5,

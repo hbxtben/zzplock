@@ -449,7 +449,7 @@
                     this.pswWork();
                     setTimeout(() => {
                         this.resetLock();
-                    },400)
+                    },600)
                 }
             },false);
 
