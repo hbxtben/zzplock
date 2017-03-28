@@ -1,11 +1,5 @@
-.pos {
-  position: absolute;
-  left: 50%;
-  top: 15%;
-  transform: translate(-50%, -50%);
-  display: block;
-  border: 1px solid #ffffff;
-}
+@import "mixin.less";
+
 
 #changePsw {
   display: block;
@@ -18,7 +12,7 @@
   line-height: 35px;
   border-radius: 5px;
   background: #254154;
-  color: #ffffff;
+  color: @fontColor;
   font-size: 17px;
 }
 
@@ -28,7 +22,7 @@
 }
 
 #title {
-  color: #ffffff;
+  color: @fontColor;
   margin: 170px auto auto 0;
   font-size: 20px;
 }
@@ -69,12 +63,12 @@
   }
 
   #hint {
-    border: 2px solid #ffffff;
+    border: 2px solid @borderColor;
     border-radius: 10px;
   }
 
   #myImage {
-    border: 2px solid #ffffff;
+    border: 2px solid @borderColor;
     width: 200px;
     height: 200px;
     border-radius: 100px;
