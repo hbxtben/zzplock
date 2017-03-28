@@ -103,10 +103,10 @@
             if(!metaEle) {
                 metaEle = document.createElement("meta");
                 metaEle.setAttribute("name","viewport");
+                metaEle.setAttribute("content", "width=device-width, maximum-scale="+ scale +",minimum-scale="+ scale +", initial-scale=" + scale + ", user-scalable=no");
                 document.head.appendChild(metaEle);
             }
             document.querySelector("html").setAttribute("data-ptr", radio);
-            metaEle.setAttribute("content", "maximum-scale="+ scale +",minimum-scale="+ scale +", initial-scale=" + scale + ", user-scalable=no");
         }
 
         /**
@@ -454,7 +454,7 @@
             },false);
 
             document.addEventListener('touchmove', function(eve){
-                eve.preventDefault();
+                //eve.preventDefault();
             },false);
 
             document.querySelector("#changePsw").addEventListener("click", () => {

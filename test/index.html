@@ -2,7 +2,6 @@
 <html lang="zh" data-ptr="1">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>zzpLock</title>
     <link rel="stylesheet" href="../style/css/zzpLock.css">
 </head>
@@ -13,7 +12,7 @@
 <script type="text/javascript">
     var lock = new ZZPLock({
         'pwdResultMsg': function(state) {
-            let title = document.querySelector("#title");
+            var title = document.querySelector("#title");
             switch(state) {
                 case 'success' :
                     title.textContent = "密码正确";          //success
@@ -39,7 +38,7 @@
             }
         },
         'showMsg': function(state) {
-            let hint =  document.querySelector("#hint"),
+            var hint =  document.querySelector("#hint"),
                 myImage = document.querySelector("#myImage"),
                 title = document.querySelector("#title"),
                 changePsw = document.querySelector("#changePsw");
@@ -65,8 +64,5 @@
         },
         'pswEncript': md5,
     });
-
-    //销毁组件
-    //lock.destory();
 </script>
 </html>
