@@ -1,12 +1,13 @@
 {
   "name": "zzplock",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.3",
+  "description": "移动端HTML5手势解锁",
   "main": "gulpfile.js",
   "dependencies": {
     "browser-sync": "^2.18.5",
     "gulp": "^3.9.1"
   },
+
   "devDependencies": {
     "autoprefixer": "^6.6.1",
     "babel-preset-es2015": "^6.24.0",
@@ -17,9 +18,22 @@
     "gulp-load-plugins": "^1.4.0",
     "gulp-uglify": "^2.1.2"
   },
+  "keywords": [
+    "js",
+    "web-mobile",
+    "H5-lock",
+    "web-component"
+  ],
+  "bugs": {
+    "url": "https://github.com/hbxtben/zzplock/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbxtben/zzplock.git"
+  },
   "scripts": {
     "test": "gulp build"
   },
-  "author": "",
+  "author": "zzp",
   "license": "ISC"
 }
