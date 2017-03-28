@@ -1,13 +1,15 @@
 # ZZPLock 
 
-![](https://travis-ci.org/hbxtben/zzplock.svg?branch=master)  
-**移动端HTML5手势解锁，提供多机型适配的轻量级插件**
+![](https://travis-ci.org/hbxtben/zzplock.svg?branch=master)  ![](https://img.shields.io/badge/npm-v0.1.1-blue.svg)  
+**移动端HTML5手势解锁,使用canvas绘制，提供对Retina屏适配的轻量级插件**
 
 ## DEMO
 [DEMO](https://hbxtben.github.io/zzplock/test/)(需打开移动端调试工具查看效果) 
+> dEMO二维码  
+![ercode](https://github.com/hbxtben/zzplock/blob/master/images/zzplock.png)  
 
-![gif效果展示](https://github.com/hbxtben/zzplock/blob/master/images/zzplock.gif)
-![ercode](https://github.com/hbxtben/zzplock/blob/master/images/zzplock.png)
+> gif效果展示  
+![gif效果展示](https://github.com/hbxtben/zzplock/blob/master/images/zzplock.gif) 
 
 ## 简要说明
 - 支持密码设置时两次校对
@@ -25,7 +27,7 @@
 ```
 ### 2.初始化对象及配置信息
 #### 配置接口
-```
+```javascript
 var lock = new ZZPLock({
    /**
    * pwdResultMsg 必填配置项，设置一次滑动后不同状态时的界面效果 
