@@ -97,7 +97,6 @@
             this.template = this.template.replace(/\{([^{}]+)\}/gm, (match, name) => {
                 return this[name];
             });
-            console.log(this.template);
 
             let metaEle = document.querySelector("meta[name=viewport]");
             if(!metaEle) {
@@ -240,7 +239,6 @@
             if(this.btnFlag === 1) {
                 this.pswObj = {};
                 window.localStorage.removeItem("lockPsw");
-                window.localStorage.removeItem("nodeType");
                 document.querySelector("#title").textContent = "设置解锁图案";
                 this.resetLock();
             }
@@ -278,7 +276,7 @@
         pswWork() {
             let state = this.pswObj.lockState;
             if(state === 2) {
-                let lockPsw = this._pswEncript(JSON.stringify(this.pswObj.lockPsw)),
+                let lockPsw = this.pswObj.lockPsw,
                     nowPsw = this._pswEncript(JSON.stringify(this.lastNodes));
                 if(lockPsw === nowPsw) {
                     this.stateCirCol("#00ff00");
@@ -293,9 +291,8 @@
                 if(secPsw === firPsw) {
                     this.stateCirCol("#00ff00");
                     this.pswObj.lockState = 2;
-                    this.pswObj.lockPsw = this.lastNodes;
-                    window.localStorage.setItem("nodeType",this.nodeType);
-                    window.localStorage.setItem("lockPsw",firPsw);
+                    this.pswObj.lockPsw = secPsw;
+                    window.localStorage.setItem("lockPsw",secPsw);
                     this._pwdResultMsg(SEC_SUCCESS);
                 } else {
                     this.stateCirCol("#ff0000");
