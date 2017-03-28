@@ -14,9 +14,9 @@
         /**
          * @param {object} config 初始化配置对象
          * @param {int} nodeType 选择n*n的锁点矩阵
-         * @param {string} container canvas的容器id
          * @param {int} width,height canvas宽高
          * @param {string} backColor, preColor ,afterColor,lineColor 背景颜色/选中前点颜色/选中后颜色/连线颜色
+         * @param {string}
          */
         constructor(config) {
             if(instance) {
@@ -24,6 +24,7 @@
             }
             instance = this;
 
+            //默认属性
             let _default = {
                 nodeType   : 3,
                 width      : 300,
@@ -35,11 +36,11 @@
                 fillColor  : "#2b4a5f",
                 canvasName : "#canvas",
                 hintName   : "#hint",
-                template   :   `<canvas id="hint" width=100 height=100></canvas>`
-                             + `<div id="myImage"></div>`
-                             + `<h4 id="title" class="title">设置解锁图案</h4>`
+                template   :   '<canvas id="hint" width=100 height=100></canvas>'
+                             + '<div id="myImage"></div>'
+                             + '<h4 id="title" class="title">设置解锁图案</h4>'
                              + '<canvas id="canvas" width={width} height={height}></canvas>'
-                             + `<a id="changePsw">设置密码</a>`,
+                             + '<a id="changePsw">设置密码</a>',
 
             };
 
@@ -56,10 +57,9 @@
 
         /**
          * 初始化函数
-         * lockPsw会添加到localstorage中，作为密码
+         * lockPsw是存储的密码
          */
         initLock() {
-            // let pswObj = JSON.parse();
             //可配置是否需要适配
             if(this.ifAdapter) {
                 this.adapte();
@@ -94,6 +94,7 @@
             this.width = this.width * radio;
             this.height = this.height * radio;
 
+            //将节点中的width，height替换为适配的宽高
             this.template = this.template.replace(/\{([^{}]+)\}/gm, (match, name) => {
                 return this[name];
             });
@@ -193,6 +194,11 @@
             }
         }
 
+        /**
+         * 界面展示信息的回调函数的调用
+         * @param state 解锁的3种状态
+         * @private
+         */
         _showMsg(state) {
             if(this.showMsg) {
                 this.showMsg(state);
@@ -216,6 +222,7 @@
                 this.cvh.fill();
             }
         }
+
 
         showHint() {
             let index,
