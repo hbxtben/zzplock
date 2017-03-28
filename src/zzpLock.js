@@ -493,25 +493,6 @@
             } else {
                 return false;
             }
-        },
-
-        /**
-         * 密码一致性 比较
-         * @param p1,p2 节点信息数组
-         * @returns {boolean}
-         */
-        checkPsw(p1, p2) {
-            let p1str = '',
-                p2str = '';
-            for(let i = 0 ; i < p1.length ; i++) {
-                p1str += p1[i].index;
-            }
-
-            for(let i = 0 ; i < p2.length ; i++) {
-                p2str += p2[i].index;
-            }
-
-            return p1str === p2str;
         }
     }
 
