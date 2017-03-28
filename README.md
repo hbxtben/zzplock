@@ -5,7 +5,7 @@
 
 ## DEMO
 [DEMO](https://hbxtben.github.io/zzplock/test/)(需打开移动端调试工具查看效果) 
-> dEMO二维码  
+> DEMO二维码  
 ![ercode](https://github.com/hbxtben/zzplock/blob/master/images/zzplock.png)  
 
 > gif效果展示  
@@ -18,6 +18,11 @@
 - 使用单例模式
 - 支持多机型适配
 - 通过gulp构建
+
+## 下载方式
+```shell
+npm install zzplock
+```
 
 ## 使用方法
 ### 1.引入css,js
@@ -73,3 +78,15 @@ var lock = new ZZPLock({
                  + '<a id="changePsw">设置密码</a>',
 });
 ```
+### 3.对外函数接口
+#### changePsw 重置密码
+重置密码并进行页面的刷新
+```javascript
+lock.changePsw();
+```
+#### destory 销毁组件
+删除canvas节点，并置空组件对象
+```javascript
+lock.destory();
+```
+
